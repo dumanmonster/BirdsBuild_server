@@ -9,6 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/api/items", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const data = fs.readFileSync("./items.json", "utf8");
     res.send(data);
@@ -19,6 +20,7 @@ app.get("/api/items", (req, res) => {
 });
 
 app.put('/api/items', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const newData = req.body;
     fs.writeFileSync('./items.json', JSON.stringify(newData));
@@ -29,6 +31,7 @@ app.put('/api/items', (req, res) => {
   }
 });
 app.get("/api/deals", (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const data = fs.readFileSync("./deals.json", "utf8");
     res.send(data);
@@ -38,6 +41,7 @@ app.get("/api/deals", (req, res) => {
   }
 });
 app.post('/api/deals', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const data = fs.readFileSync('./deals.json', 'utf8');
     const deals = JSON.parse(data);
@@ -52,6 +56,7 @@ app.post('/api/deals', (req, res) => {
   }
 });
 app.put('/api/deals', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   try {
     const newData = req.body;
     fs.writeFileSync('./deals.json', JSON.stringify(newData));
