@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const { v4: uuidv4 } = require("uuid");
 const app = express();
 
-app.use(cors({ origin: "https://vue3comp.vercel.app/" }));
+app.use(cors({ origin: "https://vue3comp-dumanmonster.vercel.app/" }));
 app.use(bodyParser.json());
 
 app.get("/api/items", (req, res) => {
