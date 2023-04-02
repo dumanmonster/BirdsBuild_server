@@ -66,7 +66,7 @@ app.put("/api/deals", (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log("Server is listening on port 3000");
 });
